@@ -1,0 +1,11 @@
+<li class="flex border rounded-xl h-80">
+
+    <p class="sno">{{i+1}}</p>
+    <img [src]= "book.image" class="m-auto rounded-sm"/>
+    <div class="m-auto">
+        <p  class="text-lg">{{ book.title | titlecase }} {{book.subtitle}}</p>
+        <p class="my-4">{{book.price}}</p>
+        <button class="bg-yellow-400 rounded p-3" *ngIf = "!isincart" (click)="addtocart()">Add to Cart</button>
+        <button class="bg-yellow-400 rounded p-3" *ngIf = " isincart" (click)="removefromcart()">Remove from Cart</button>
+    </div>
+</li>

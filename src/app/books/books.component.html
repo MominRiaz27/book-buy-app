@@ -1,0 +1,20 @@
+
+<!-- <button (click)="isshowing = ! isshowing" >
+    <ng-container *ngIf = "isshowing" >Hide books</ng-container>
+    <ng-container *ngIf = "!isshowing" >Show books</ng-container>
+</button> -->
+
+<!-- <input type="text" [(ngModel)] = "inputdata" >
+<p>{{inputdata}}</p> -->
+
+<!--*ngIf = "isshowing"-->
+<ul *ngIf = "isshowing" class="flex flex-wrap justify-center" >
+    <ng-container *ngFor = "let singlebook of books; let i =index">
+        <app-book 
+        (emitbook) = "addtocartnow($event)" 
+        [book] = "singlebook" [i] = "i"  
+        class="w-1/2 p-5 text-center"
+        >
+        </app-book>
+    </ng-container>
+</ul>
